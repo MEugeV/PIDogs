@@ -1,0 +1,63 @@
+
+
+.landing {
+    background-image: url("./pictures/yellowdog.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* object-fit: cover; */
+}
+
+.title {
+    position: relative;
+    float: left;
+    font-size: 3vw;
+    /* background-color: yellow; */
+    color: white;
+    letter-spacing: 2px;    
+    margin-top: 7%;
+    margin-left: 2%;
+    text-shadow:  4px 4px 7px #E8AA42;
+
+}
+
+.start {
+    font-size: 5.5vw;
+    font-weight:bold;
+    color: #8f0040;
+    text-decoration: none;
+    text-shadow:  1px 1px 4px #D1512D;
+    letter-spacing: 5px;    
+    margin-left: 19%;
+    margin-bottom: 10%;
+    transition: 0.2s;
+}
+.start:hover {
+    font-weight:bolder;
+    font-size: 5.8vw;
+    text-shadow:  3px 3px 7px #D1512D;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+
+}
+
+/* 
+.title .span{
+    position: absolute;
+    right: 0;
+    width: 0;
+    background-color: transparent;
+    background-color: yellow;
+    border-left: 1px solid #000;
+    animation: tipeado 5s steps(29) infinite alternate;
+}
+
+@keyframes tipeado {
+    from {width: 100%;}
+    to {width: 0;}
+} */

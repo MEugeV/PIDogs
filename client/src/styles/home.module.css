@@ -1,0 +1,78 @@
+
+.home {
+    /* background-color: #ffe900; */
+    /* background-color: #ffec1f; */
+    /* background-color: rgba(255, 236, 31, 0.8); */
+    background-color: #19b3a6;
+    padding-bottom: 15px;
+    height: 100%;
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center; */
+}
+.notFound {
+    /* background-color: rgba(255, 236, 31, 0.8); */
+    height: 100%;
+}
+
+/* .loading{
+    width: 500px;
+    display: flex;
+    position: absolute;
+    left: 10px; */
+    /* background-color: rgba(255, 236, 31, 0.8);
+    height: 50vw; */
+/* } */
+
+
+/* .loadingIn {
+    margin-top: 50px; */
+    /* background-color: #ff9f29; */
+    /* animation: tipeo 1s infinite alternate;
+    font-size: 25px;
+
+} */
+
+.loading {
+    position: relative;
+    top: 10vh;
+    left: 46vw;
+    float:left;
+    color: #19b3a6;
+    /* color: white; */
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1.5vw;
+
+
+    /* background-color: lime; */
+}
+
+.loadingIn {
+    position: absolute;
+    right: 0;
+    width: 10px;
+    color: #19b3a6;
+    background-color: white;
+    border-left: 1px solid black;
+    animation: tipeo 1s steps(11) infinite;
+
+}
+/* 
+alternate */
+
+@keyframes tipeo {
+    from {width: 100%;}
+    to {width: 0%;}
+
+}
+
+
+/* @keyframes tipeo {
+    from {
+        margin-left: 590px;
+    }
+    to {
+        margin-left: 645px;
+    }
+} */

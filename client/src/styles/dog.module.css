@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+
+.image {
+    border-radius: 10px;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    /* max-width: 190px;
+    max-height: 190px;  */
+    /* 195imagebox heig/190-190, dog whidth 195 */
+    /* text-align: center;
+    position: relative;
+    margin:auto */
+}
+
+.imageBox {
+    border-radius: 10px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    margin:auto;
+    /* background-color:#CCD6A6 ; */
+    /* width: 24vw; public*/
+    /* height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* background-color: rgba(50, 50, 50, 0.8); */
+    /* isolation: isolate; */
+}
+/* .imageBox:hover {
+    height: 160px;
+}
+.image {
+    width: 110%;
+} */
+
+.dog {
+    /* font-family: 'Mulish', sans-serif;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 195px;
+    height: 500px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center; */
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+    border: 1px solid white;
+    /* height: 350px; */
+    /* justify-content: space-between; */
+    /* display: flex;
+    position: relative; */
+    /* border: 1px double black; */
+    margin: 0;
+    box-shadow: 1px 1px 2px 2px white;
+    /* box-shadow: 1px 1px 2px 2px #b8a800; */
+    background-color: white;
+}
+
+.dog:hover {
+    /* box-shadow: 10px 10px 10px 10px #66002E(0, 0, 0, 0.9); */
+    /* border: 2px double black; */
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+    max-width: 110%;   
+}
+
+.link {
+    text-decoration: none;
+    /* background-color: #66002E; */
+    /* background-color: #154751; */
+    background-color: #a90f54;
+    /* background-color: #dc136c; */
+    color: white; 
+    font-size: 18px;   
+    border-radius: 4px;
+    text-shadow:2px 2px 2px #830b41;
+    /* text-shadow:2px 2px 2px #113940; */
+    /* width: fit-content; */
+    /* margin: 0; */
+    /* margin: auto; */
+}
+
+.link:hover {
+    font-size: 22px;
+    text-shadow:2px 2px 2px #0d2a30;
+}
+
+.info {
+    /* height: 9vw; */
+    margin: 0;
+    font-size: 14px;
+}
+.name {
+    /* height: 7vw;
+    margin: 0;
+    font-size: 20px; */
+    margin: 0;    
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.infoCont {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+    margin: 0;    
+}
+
+/* #ff4b06
+#d1512dxxx
+#ef5b0C
+
+#47a025
+#36741b */

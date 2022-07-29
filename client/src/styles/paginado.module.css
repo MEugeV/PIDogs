@@ -1,0 +1,48 @@
+
+.paginated {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    margin: auto;
+    padding: 0px 0px 10px 0px;
+    
+}
+
+.selected {
+    text-anchor:start;
+    background-color:  #ffea11;
+    border-radius: 3px;
+    /* background-color:  #3be3e5; */
+    border: 1px solid #76ba99;
+    font-size: 15px;
+}
+
+.selections {
+    background-color: white;
+    border-radius: 3px;
+    font-size: 15px;
+    border: 1px solid #76ba99;
+}
+
+.selections:hover {
+    background-color: #e9dac1;
+    font-size: 15px;
+    border: 1px solid #76ba99;
+}
+
+.buttons {
+    /* background-color: #EDDFB3; */
+    border: 1px solid #76ba99;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+.butSel {
+    border: 1px solid #76ba99;
+    /* background-color: red; */
+    color: black;
+    font-weight: bold;
+    border-radius: 12px;
+    height: 30px;
+    font-size: 15px;
+}
