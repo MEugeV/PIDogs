@@ -1,7 +1,6 @@
 
 .paginated {
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: center;
     margin: auto;
     padding: 0px 0px 10px 0px;
@@ -10,39 +9,41 @@
 
 .selected {
     text-anchor:start;
-    background-color:  #ffea11;
+    background-color:  #227b81;
     border-radius: 3px;
-    /* background-color:  #3be3e5; */
-    border: 1px solid #76ba99;
-    font-size: 15px;
+    border: 1px solid  #1a5e63;;
+    color: white;
+    font-weight: 300 ;
+    font-size: 1.1vw;
 }
 
 .selections {
     background-color: white;
     border-radius: 3px;
-    font-size: 15px;
+    font-size: 1vw;
     border: 1px solid #76ba99;
 }
 
 .selections:hover {
     background-color: #e9dac1;
-    font-size: 15px;
+    font-size: 1vw;
     border: 1px solid #76ba99;
+    cursor: pointer;
 }
 
-.buttons {
-    /* background-color: #EDDFB3; */
+.disabled {
+    background-color: #F1F1F1;
     border: 1px solid #76ba99;
-    border-radius: 3px;
-    font-size: 15px;
+    border-radius: 4px;
+    font-size: 1vw;
 }
-
+/* 
 .butSel {
     border: 1px solid #76ba99;
-    /* background-color: red; */
+    background-color: red;
     color: black;
     font-weight: bold;
     border-radius: 12px;
     height: 30px;
     font-size: 15px;
-}
+} */

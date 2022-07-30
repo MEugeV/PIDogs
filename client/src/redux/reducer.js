@@ -15,9 +15,7 @@ const initialState= {
     shownDogs: [],
     temperaments: [],
     detail:{},
-    existentBreed:[], ////////////////??????????????????????????????????
     page:1
-    // order:false
 }
 
 export default function reducer (state=initialState, action) {
@@ -68,7 +66,10 @@ export default function reducer (state=initialState, action) {
             } else if (action.payload.temperament==="All") {
                 return {
                     ...state,
-                    shownDogs: state.dogs.filter(el=> action.payload.source==="Existent"? !isNaN(el.id) : isNaN(el.id)),
+                    shownDogs: state.dogs.filter(el=> 
+                        action.payload.source==="Existent"
+                        ? !isNaN(el.id) 
+                        : isNaN(el.id)),
                     page: 1
                 } 
             } else if (action.payload.source==="All") {
@@ -80,11 +81,15 @@ export default function reducer (state=initialState, action) {
             } else {
                 return {
                     ...state,
-                    shownDogs: state.dogs.filter (el=> el.temperaments.includes(action.payload.temperament) && (action.payload.source==="Existent"? !isNaN(el.id) : isNaN(el.id))),
+                    shownDogs: state.dogs.filter (el=> 
+                        el.temperaments.includes(action.payload.temperament) 
+                        && (action.payload.source==="Existent"
+                        ? !isNaN(el.id) 
+                        : isNaN(el.id))),
                     page: 1
                 }
             }
-        case ORDER_DOGS:  //no me renderiza cuando ordeno... y trate agregando otro estado y no... ordené en lugar de filtro de origen y no renderiza, lo vez cuando cambias otra cosa..
+        case ORDER_DOGS:  
             let stateCopy= [...state.shownDogs]
             if(action.payload==="a-z") {
                 return {
@@ -112,7 +117,6 @@ export default function reducer (state=initialState, action) {
                 return {
                     ...state,
                     shownDogs: stateCopy.sort(function(a,b) {
-                        // return (parseFloat(a.min_weight)+parseFloat(a.max_weight))/2-(parseFloat(b.min_weight)+parseFloat(b.max_weight))/2
                         if(((parseInt(a.min_weight)+parseInt(a.max_weight))/2)<((parseInt(b.min_weight)+parseInt(b.max_weight))/2)) {
                             return -1
                         } else if (((parseInt(a.min_weight)+parseInt(a.max_weight))/2)>((parseInt(b.min_weight)+parseInt(b.max_weight))/2)){
@@ -120,7 +124,6 @@ export default function reducer (state=initialState, action) {
                         } else {
                             return 0}
                         }),
-                    // order: !state.order
                 }
             } else if (action.payload==="max-min") {
             return {

@@ -81,7 +81,7 @@ export default function validate (state,dogs,err={}) {   ///AL SUBMITEAR VALIDAR
     //     err.temperaments="You should select at least one temperament"
     // }
     if(!state.name || !state.min_weight || !state.max_weight || !state.min_height || !state.max_height || state.temperaments.length===0) {
-        err.required=`Required: ${!state.name? "Name," : ""} ${!state.min_weight? "Min weight," : ""} ${!state.max_weight? "Max weight," : ""} ${!state.min_height? "Min height," : ""} ${!state.max_height? "Max height," : ""} ${state.temperaments.length===0? "At Least One Temperament" : ""}`
+        err.required=`Add: ${!state.name? "Name," : ""} ${!state.min_weight? "Min weight," : ""} ${!state.max_weight? "Max weight," : ""} ${!state.min_height? "Min height," : ""} ${!state.max_height? "Max height," : ""} ${state.temperaments.length===0? "At Least One Temperament" : ""}`
     }
     if(Object.entries(err).length<1) {document.querySelector("#submit").disabled=false} else {document.querySelector("#submit").disabled=true}
     return err

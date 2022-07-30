@@ -1,19 +1,35 @@
 import React from "react"
-import styles from "../styles/filterOrder.module.css"
+import styles from "../styles/navTools.module.css"
 
 
-export default function SearchBar ({handleSearch, handleChange,handleUnSearch, search, searched}) {
+export default function SearchBar ({handleSearch, handleChange, search, searched}) {
     return (
         <div className={styles.searchContainer}>
-        <form  onSubmit={handleSearch}>
+        <form onSubmit={handleSearch}>
             <label to="searchBar">Search Breed </label>
-            <input className={styles.butSel} name="searchBar"type="text"  placeholder="..." onChange={handleChange}></input>
-            <input className={styles.lupa} type="submit" value="&#x1f50d;&#xfe0e;" ></input>
+            <input 
+                className={styles.buttonSelection} 
+                name="searchBar"
+                type="text"  
+                placeholder="..." 
+                onChange={handleChange}>    
+            </input>
+            <input 
+                className={styles.lupa} 
+                type="submit" 
+                value="&#x1f50d;&#xfe0e;" >
+            </input>
         </form>            
-            {/* {error && <span>{error}</span> } */}
-            {searched && <div className={styles.search}>Selection: {search} <button className={styles.unsearch} onClick={handleUnSearch}>X</button> </div> }
-
-    </div>
-
+            {searched && 
+                <div 
+                    className={styles.search}>
+                    Search:  {search} 
+                    {/* <button 
+                        className={styles.unsearch} 
+                        onClick={handleUnSearch}>
+                            Reset Search
+                    </button>  */}
+                </div> }
+        </div>
     )
 }

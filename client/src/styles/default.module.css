@@ -1,0 +1,18 @@
+.default {
+    margin-top: 10vh;
+    color: #A10035;
+    font-size: 5vw;
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    text-shadow: 1px 1px 5px #000000;
+    color: white;
+    font-weight: 700;
+}
+
+.link:hover {
+    text-shadow:2px 2px 8px #000000;
+
+}

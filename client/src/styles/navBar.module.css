@@ -1,48 +1,46 @@
 .navBar {
     display: flex;
+    position: relative;
     flex-direction: column;
     color: white;
     font-weight:500;
     /* text-shadow: #ccbb00; */
     /* text-shadow:0.5px 0.5px 1px #b8a800; */
     text-shadow:0.5px 0.5px 1px #127f74;
-    font-size: 16px;
+    font-size: 1.2vw;
     /* justify-content: space-between; */
     /* background-color: #f4fcd9   ; */
-}
-
-.filterOrder {
-    padding-top: 10px;
-    padding-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: center
-
-
-}
-
-.links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-decoration: none;
-    /* text-decoration-line:underline; */
-    font-weight: bold;
-    font-size: 21px;
-    margin-left: 5px;
-    margin-right: 5px;
-    color: white;
-    text-shadow:1px 1px 2px #127f74;
-}
-
-.links:hover {
-    font-size: 22px;
-    text-shadow:2px 2px 2px rgba(0, 0, 0, 0.5);
-
+    border-radius: 10px 10px 10px 10px;
 }
 
 .search {
     display: flex;
     justify-content: center;
+}
+
+.filterOrder {
+    padding-top: 4px;
+    padding-bottom: 7px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center
+}
+
+.buttonSelection {
+    background-color: #227b81;
+    border-radius: 10px;
+    border: 1px solid #1a5e63;
+    color: white;
+    height: 1.7vw;
+    font-weight: 400px;
+    margin-bottom: 1.4vh;
+    text-shadow:0.5px 0.5px 1px #1a5e63;
+    font-size: 1.1vw;
+    /* 660027 8f0040 */
+}
+.buttonSelection:hover {
+    background-color: #1a5e63;
+    cursor: pointer;
 }

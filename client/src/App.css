@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Homemade+Apple&display=swap');
+
+.head {
+  background-color:#ffea11;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ /* #ffea11 #FFC900*/
+  top: 0;
+  font-weight: bold;
+  color: #8f0040;
+  position: fixed;
+  left:0;
+  right: 0;
+  /* text-shadow:1px 1px 2px #127f74; */
+
+}
+.headLinks{
+  margin-left: 5px;
+  font-size: 1.2vw;
+  font-weight:bold;
+  color: #8f0040;
+  text-shadow:  1px 1px 2px #D1512D;
+  letter-spacing: 2px;    
+  transition: 0.2s;
+  margin-right: 5px;
+  text-decoration: none;
+  padding: 0.5vw;
+}
+
+#landing {
+  font-family: 'Homemade Apple', cursive;
+}
+.headLinks:hover {
+  font-weight:bolder;
+  font-size: 1.3vw;
+  text-shadow:  2px 2px 3px #D1512D;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+
+}
+
 .App {
   text-align: center;
 }

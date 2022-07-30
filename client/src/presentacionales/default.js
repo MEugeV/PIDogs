@@ -1,12 +1,15 @@
 import React from "react"
 import {Link} from "react-router-dom"
+import styles from "../styles/default.module.css"
 
 export default function Default (){
     return (
-        <div>
-            La página que estás buscando no existe.
+        <div className={styles.default}>
+            <h3>
+            404 Page Not Found
+            </h3>
             <br/>
-            <Link to="/home" >Return to home</Link>
+            <Link className={styles.link} to="/home" >Home</Link>
         </div>
 
 
