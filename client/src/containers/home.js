@@ -1,12 +1,12 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux"
-import Dogs from "../presentacionales/dogs"
-import NavBar from "./navBar";
+import Dogs from "../components/dogs"
+import CardsBar from "./cardsBar";
 import {getDogs, getTemperaments, setPage, resetDogs} from "../redux/actions" 
-import { Paginado } from "../presentacionales/paginado";
-import {Link} from "react-router-dom"
+import { Paginado } from "../components/paginado";
 import styles from "../styles/home.module.css"
 import img from "../styles/pictures/breednf.jpg" 
+import NavBar from "../components/navBar";
 
 function Home ({shownDogs, dogs,getDogs,getTemperaments,page, setPage,resetDogs}) { 
 
@@ -19,7 +19,7 @@ useEffect (()=>{
         setPage(1)
     }
 },[])
-
+//getDogs,getTemperaments,resetDogs,setPage
 
 let pagesPerPage=8
 let pages=Math.ceil(shownDogs.length/pagesPerPage)
@@ -39,13 +39,11 @@ function handleNext (e) {
 
     return (
         <div className={styles.home}>
-            <div className="head">
-                <Link id="landing" className="headLinks" to="/">DogBreeds Place</Link>
-                <Link className="headLinks" to="/form">Create your breed</Link>
-            </div>
+            <NavBar>    
+            </NavBar>
             <div className={styles.homeBar}>
-                <NavBar>
-                </NavBar> 
+                <CardsBar>
+                </CardsBar> 
                 <Paginado 
                     page={page} 
                     pages={pages} 
@@ -66,7 +64,8 @@ function handleNext (e) {
                 </div> 
             : <div 
                 className={styles.notFound}>
-                    <p >Dogs not found...</p> 
+                    <div className={styles.positionNotFound}>" "</div>
+                    <p >Empty selection...</p> 
                     <img 
                         src={img} 
                         className={styles.imgNotFound} 

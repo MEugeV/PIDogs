@@ -3,36 +3,58 @@
     text-align: center;
 }
 
+.detailShown {
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
     position: relative;
     top: 7vh;
     display: grid;
     grid-template-columns: 43vw 43vw;   
-    box-shadow:  1px 1px 50px  #E6B325 inset ;
+    box-shadow:  1px 1px 50px  #E6B325 inset, 10px 10px 10px rgba(0,0,0,0.1) ;
     padding: 3vh;
     margin: 1vw 2vw 1vw 2vw;
-    border-radius: 6px;
+    border-radius: 10px;
+    font-size: 1.1vw;
     color: black;
     height: 70vh;
 }
 
 .tittle {
+    font-family: 'Square Peg', cursive;
     font-weight: 800;
+    font-size: 2vw;
+    margin: 1px;
 }
 
 .name {
-    /* height: 7vw; */
     margin: 0;
-    font-size: 5vh;
+    font-size: 4vh;
     font-weight: 600;
     letter-spacing: 2px;    
+    color: #8f0040;
+    font-family: 'Mulish', sans-serif;
+    /* font-family: 'Homemade Apple', cursive; */
+}
+
+.imgBox {
+    position: relative;
 }
 
 .image {
-    border-radius: 2px;
+    border-radius: 10px;
     max-width: 34vw;
-    max-height: 35vw; 
+    max-height: 33vw; 
+    box-shadow:  10px 10px 20px  #dda448;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
+/* 
+La propiedad CSS transform te permite modificar el espacio de coordenadas del modelo de formato visual CSS. Usándola, los elementos pueden ser trasladados, rotados, escalados o sesgados de acuerdo a los valores establecidos. */
 
 .notFound {
     z-index: -1;
@@ -40,25 +62,18 @@
     display: flex;
     padding-top: 15vh;
     flex-direction: row-reverse;
-    /* position: relative; */
     justify-content: space-between;
 
 }
 .linkNotFound {
-    /* position: relative; */
-    /* top: 150px; */
-    padding-right: 5vw;
-    padding-top: 15vh;
-    font-size: 17px;
-    right: 50px;
+    padding-right: 10vw;
+    padding-top: 20vh;
+    font-size: 3vh;
     color: black;
     text-decoration: none;    
 }
 
 .linkNotFound:hover {
-    /* position: relative;
-    top: 150px;
-    right: 150px;     */
     font-size: 19px;
     cursor: pointer;
 }
@@ -66,8 +81,8 @@
 .imgNotFound {
     position: relative;
     width: 40%;
-    left: 750px;
-    top: 150px;
+    left: 60vw;
+    top: 28vh;
 }
 .spanNotFound {
     position: absolute;
@@ -85,3 +100,18 @@
     to {width: 0%;}
 }
 
+.home {
+    font-family: 'Square Peg', cursive;
+    text-decoration: none;
+    color: #b3191c;
+    font-weight: 600;
+    font-size: 6.5vh;   
+    border-radius: 4px;
+    margin-top: 6vh;
+}
+
+.home:hover {
+    font-weight: 600;
+    font-size: 6.5vh;
+    text-shadow:2px 2px 4px #b3191c;
+}

@@ -4,41 +4,13 @@
     position: relative;
 }
 
-
 .homeBar {
     position: fixed;
-    top: 7.5vh;
-    box-shadow: 10px 20px 55px 60px #0F3D3E inset;
-    /* background-color:#0F3D3E; */
-    /* #127f74; */
+    margin-top: 3.5vw;
+    box-shadow: 0vh -3vh 8vh 4.5vw #0f3d3e inset;
     color: white;
     right: 0;
     left: 0;
-
-     /* #19b3a6; */
-    /* padding-bottom: 15px; */
-}
-
-
-
-.notFound {
-    position: relative;
-    top: 14vw;
-    z-index: -1;
-    height: 100%;
-    text-align: center;
-    font-size: 1.5vw;
-    font-weight:bold;
-    color: #8f0040;
-    text-shadow:  1px 1px 2px #D1512D;
-    letter-spacing: 2px;        
-    margin: 0;
-
-}
-
-.imgNotFound {
-    height: 60vh;    
-    max-height: 100%;
 }
 
 .loading {
@@ -67,6 +39,28 @@
     to {width: 0%;}
 }
 
+.notFound {
+    position: relative;
+    /* top: 15vw; */
+    z-index: -1;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight:bold;
+    color: #8f0040;
+    text-shadow:  1px 1px 2px #D1512D;
+    letter-spacing: 2px;        
+    margin: 0;
+}
+
+.imgNotFound {
+    height: 60vh;    
+}
+
 .positionDogs {
     height: 37vh;
+}
+
+.positionNotFound {
+    height: 30vh;
 }

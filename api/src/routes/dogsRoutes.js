@@ -5,7 +5,6 @@ const{getDogs, postDog, getDetail} = require ("../controllers/dogsControllers")
 const routes= Router()
 
 routes.get("/", async (req,res,next)=>{
-    /////si ya pidieron y no hubo cambios lo tengo que enviar igual, en donde tengo que manejar de no pedir cuando no necesito es en el front//////
     const {name}= req.query
     try {
         const dogs=await getDogs()
@@ -15,9 +14,7 @@ routes.get("/", async (req,res,next)=>{
         } else {
             const dogsFilteredByName= dogs.filter(dog=>dog.name.toLowerCase().includes(name.toLowerCase()))
 
-            res.status(200).send(dogsFilteredByName)
-            //de lo contrario no me renderiza nada cuando no encuentra y pareciera que no hace nada..
-            // dogsFilteredByName.length > 0 ? res.status(200).send(dogsFilteredByName) : res.status(500).send("There are not Dogs found with that breed")
+            dogsFilteredByName.length<1? res.status(400).send("Empty search"): res.status(200).send(dogsFilteredByName)
         }
 
     } catch (error) {
@@ -44,39 +41,39 @@ routes.post("/", async (req,res,next)=>{
     const {
         name, 
         image, 
-        min_height, 
-        max_height, 
-        min_weight, 
-        max_weight, 
+        height,
+        weight,
         life_span,
-        temperaments
+        temperaments,
+        addTemperaments
     }= req.body
 
-    if(!name || !min_height || !max_height || !min_weight || !max_weight || !temperaments) {
+    if(!name || !height || !weight || !temperaments || temperaments.length===0) {
  
-        res.status(500).send("Name, min-max heigth, min-max weight and temperaments are required")}  
+        res.status(500).send("Name, heigth, weight and temperaments are required")
+    
+    } else {
 
-    try{
-        
-        const newDog= await postDog(
-            name, 
-            image, 
-            min_height, 
-            max_height, 
-            min_weight, 
-            max_weight, 
-            life_span,
-            temperaments)
-        
-        res.status(200).send(newDog)
-
-    } catch (error) {
-
-        next(error)
-
+        try{        
+            await postDog(
+                name, 
+                image, 
+                height,
+                weight,
+                life_span,
+                temperaments,
+                addTemperaments)
+            
+            res.status(200).send("Dog created successfully")
+    
+        } catch (error) {
+    
+            next(error)
+        }
     }
 
 
-})
+}
+)
 
 module.exports = routes

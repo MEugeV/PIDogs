@@ -1,2 +1,0 @@
-const dataArr = new Set(data);
-puedes convertir el nuevo Set a un arreglo nuevamente utilizando la sintaxis spread.

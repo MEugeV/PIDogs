@@ -30,7 +30,7 @@ let last= parseInt(page)!==parseInt(pages)? parseInt(page)===1? parseInt(page)+2
             <span>  ...  </span>
             {pagesArray.slice(first,last).map(el=>(
                 <button 
-                    className={el==page? styles.selected : styles.selections} 
+                    className={el===parseInt(page)? styles.selected : styles.selections} 
                     onClick={handlePage} 
                     key={el} 
                     value={el}>

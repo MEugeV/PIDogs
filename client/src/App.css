@@ -5,16 +5,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
- /* #ffea11 #FFC900*/
   top: 0;
   font-weight: bold;
   color: #8f0040;
   position: fixed;
   left:0;
   right: 0;
-  /* text-shadow:1px 1px 2px #127f74; */
-
+  align-items: center;
 }
+
 .headLinks{
   margin-left: 5px;
   font-size: 1.2vw;
@@ -28,16 +27,27 @@
   padding: 0.5vw;
 }
 
-#landing {
-  font-family: 'Homemade Apple', cursive;
-}
 .headLinks:hover {
   font-weight:bolder;
   font-size: 1.3vw;
   text-shadow:  2px 2px 3px #D1512D;
   cursor: pointer;
-  transition: all 400ms ease-in-out;
+  /* transition: all 400ms ease-in-out; */
+}
 
+.headLinksActive {
+  text-decoration: underline;
+}
+
+.headLinksActive:hover {
+  text-shadow:  1px 1px 2px #D1512D;
+  font-size: 1.2vw;
+  font-weight:bold;
+  cursor:none;
+}
+
+#landing {
+  font-family: 'Homemade Apple', cursive;
 }
 
 .App {

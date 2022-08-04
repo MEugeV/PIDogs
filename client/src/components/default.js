@@ -9,7 +9,7 @@ export default function Default (){
             404 Page Not Found
             </h3>
             <br/>
-            <Link className={styles.link} to="/home" >Home</Link>
+            <Link className={styles.link} to="/home" >DogBreeds Home</Link>
         </div>
 
 

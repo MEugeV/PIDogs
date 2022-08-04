@@ -1,13 +1,13 @@
 import { 
-    GET_DETAIL,
     GET_DOGS,
     GET_TEMPERAMENTS,
+    GET_DETAIL,
     RESET_DETAIL,
-    SEARCH_NAME,
+    SET_PAGE,
     RESET_DOGS,
+    SEARCH_NAME,
     FILTER_DOGS,
     ORDER_DOGS,
-    SET_PAGE
  } from "./actions"
 
 const initialState= {
@@ -15,7 +15,7 @@ const initialState= {
     shownDogs: [],
     temperaments: [],
     detail:{},
-    page:1
+    page:1,
 }
 
 export default function reducer (state=initialState, action) {
@@ -49,7 +49,8 @@ export default function reducer (state=initialState, action) {
         case RESET_DOGS:
             return {
                 ...state,
-                shownDogs: state.dogs
+                shownDogs: state.dogs,
+                page: 1
             }            
         case SEARCH_NAME:
             return {
@@ -113,36 +114,35 @@ export default function reducer (state=initialState, action) {
                         } else {
                             return 0}}),
                 }
-             }else if (action.payload==="min-max"){
+             }else if (action.payload==="min->max"){
                 return {
                     ...state,
                     shownDogs: stateCopy.sort(function(a,b) {
-                        if(((parseInt(a.min_weight)+parseInt(a.max_weight))/2)<((parseInt(b.min_weight)+parseInt(b.max_weight))/2)) {
+                        if(((parseFloat(a.weight.split("-")[0])+parseFloat(a.weight.split("-")[1]))/2)<((parseFloat(b.weight.split("-")[0])+parseFloat(b.weight.split("-")[1]))/2)) {
                             return -1
-                        } else if (((parseInt(a.min_weight)+parseInt(a.max_weight))/2)>((parseInt(b.min_weight)+parseInt(b.max_weight))/2)){
+                        } else if (((parseFloat(a.weight.split("-")[0])+parseFloat(a.weight.split("-")[1]))/2)>((parseFloat(b.weight.split("-")[0])+parseFloat(b.weight.split("-")[1]))/2)){
                             return 1
                         } else {
                             return 0}
                         }),
                 }
-            } else if (action.payload==="max-min") {
+            } else if (action.payload==="max->min") {
             return {
                 ...state,
                 shownDogs: stateCopy.sort(function(a,b) {
-                    if(((parseInt(a.min_weight)+parseInt(a.max_weight))/2)<((parseInt(b.min_weight)+parseInt(b.max_weight))/2)) {
+                    if(((parseFloat(a.weight.split("-")[0])+parseFloat(a.weight.split("-")[1]))/2)<((parseFloat(b.weight.split("-")[0])+parseFloat(b.weight.split("-")[1]))/2)) {
                         return 1
-                    } else if (((parseInt(a.min_weight)+parseInt(a.max_weight))/2)>((parseInt(b.min_weight)+parseInt(b.max_weight))/2)){
+                    } else if (((parseFloat(a.weight.split("-")[0])+parseFloat(a.weight.split("-")[1]))/2)>((parseFloat(b.weight.split("-")[0])+parseFloat(b.weight.split("-")[1]))/2)){
                         return -1
                     } else {
                         return 0}
-                }
-                    ),
-            }} else {
-                return {...state}
+                    }),
             }
+            } else {
+                return {...state}
+        }
         default :
             return {...state}
     }
 }
 
- 

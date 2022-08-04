@@ -12,6 +12,7 @@
     background-color:  #227b81;
     border-radius: 3px;
     border: 1px solid  #1a5e63;;
+    text-shadow:1px 1px #0F3D3E;
     color: white;
     font-weight: 300 ;
     font-size: 1.1vw;
@@ -37,13 +38,3 @@
     border-radius: 4px;
     font-size: 1vw;
 }
-/* 
-.butSel {
-    border: 1px solid #76ba99;
-    background-color: red;
-    color: black;
-    font-weight: bold;
-    border-radius: 12px;
-    height: 30px;
-    font-size: 15px;
-} */

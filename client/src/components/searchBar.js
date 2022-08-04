@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/navTools.module.css"
+import styles from "../styles/cardsBarTools.module.css"
 
 
 export default function SearchBar ({handleSearch, handleChange, search, searched}) {
@@ -11,7 +11,8 @@ export default function SearchBar ({handleSearch, handleChange, search, searched
                 className={styles.buttonSelection} 
                 name="searchBar"
                 type="text"  
-                placeholder="..." 
+                placeholder="search breed..." 
+                // value={search} // me limpia el searched al limpiar el input y no me funciona el etarget reset x que tiene el valor por estado
                 onChange={handleChange}>    
             </input>
             <input 
@@ -23,8 +24,11 @@ export default function SearchBar ({handleSearch, handleChange, search, searched
             {searched && 
                 <div 
                     className={styles.search}>
-                    Search:  {search} 
-                    {/* <button 
+                        <span className={styles.searchTitle}>Breed:</span>
+                        <span className={styles.searchBreed}>{search}</span>                       
+                    {/*
+                    Lo saco para tener un boton para resetear busquedas conjuntas (filtro y search) 
+                    <button 
                         className={styles.unsearch} 
                         onClick={handleUnSearch}>
                             Reset Search

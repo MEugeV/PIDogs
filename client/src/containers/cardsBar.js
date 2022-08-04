@@ -1,51 +1,58 @@
 import {React, useState} from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { searchName, resetDogs,filterDogs, orderDogs } from "../redux/actions"
-import {Link} from "react-router-dom"
-import Order from "../presentacionales/order"
-import SearchBar from "../presentacionales/searchBar"
-import Filters from "../presentacionales/filters"
-import styles from "../styles/navBar.module.css"
-import stylesII from "../styles/navTools.module.css"
+import Order from "../components/order"
+import SearchBar from "../components/searchBar"
+import Filters from "../components/filters"
+import styles from "../styles/cardsBar.module.css"
 
-export default function NavBar () {
+export default function CardsBar () {
 
-    const [search,setSearch] =useState("")
-    const [searched,setSearched] =useState("")
-    const[filter, setFilter] = useState({
+    const initialFilter={
         temperament: "All",
         source: "All"
-    })
+    }
 
     const temperaments = useSelector((state) => state.temperaments)     
+    const dogs = useSelector((state) => state.dogs)     
+
+    const [search,setSearch] =useState("")
+    const [searched,setSearched] =useState("") //para mostrar la seleccion sólo luego del submit
+    const[filter, setFilter] = useState(initialFilter)
+
     const dispatch = useDispatch()
 
-
+    let val="c"
+    //search
     function handleChange (e) { 
         setSearched("")
         setSearch(e.target.value)
      }
-
+    
+    
+   
     function handleSearch (e) {
         e.preventDefault()
+        console.log(e.target.value)
         dispatch(searchName(search))
-        setSearched(search)
-        e.target.reset() //setSearch("")
+        if(dogs.find(el=>el.name.toLowerCase().includes(search.toLowerCase()))) {setSearched(search)} 
+        e.target.reset()//setSearch no xq me limpia el searched tb
         Array.prototype.map.call(document.querySelectorAll("#filter"), el=>el.value="All")
         document.querySelector("#alphabetical").value="Select"
         document.querySelector("#weight").value="Select"
+        setFilter(initialFilter)
     }
 
+    //filter
     function handleFilter(e) {
         setFilter({...filter,[e.target.name]: e.target.value})
         dispatch(filterDogs({...filter,[e.target.name]: e.target.value}))
-        // Array.prototype.map.call(document.querySelectorAll(".order"), el=>el.value="Select")
         document.querySelector("#alphabetical").value="Select"
         document.querySelector("#weight").value="Select"
         setSearched("")
-
     }
 
+    //order
     function handleOrder(e) { 
         dispatch(orderDogs(e.target.value))
         e.target.id==="alphabetical" && (document.querySelector("#weight").value="Select")
@@ -53,17 +60,18 @@ export default function NavBar () {
 
     }
 
+    //search y reload
     function resetFilters (e) {
         setSearched("")
         dispatch(resetDogs())
         Array.prototype.map.call(document.querySelectorAll("#filter"), el=>el.value="All")
-        // Array.prototype.map.call(document.querySelectorAll(".order"), el=>el.value="Select")
         document.querySelector("#alphabetical").value="Select"
         document.querySelector("#weight").value="Select"
+        setFilter(initialFilter)
 }
 
     return (
-        <div className={styles.navBar}>
+        <div className={styles.cardBar}>
              <div className={styles.search}>
                  <SearchBar 
                     searched={searched} 
@@ -75,10 +83,13 @@ export default function NavBar () {
              <div className={styles.filterOrder}>
                  <Filters 
                     handleFilter={handleFilter} 
-                    temperaments={temperaments}
-                    resetFilters={resetFilters}>    
+                    temperaments={temperaments}>    
                 </Filters>
-                <button className={styles.buttonSelection} onClick={resetFilters}>Reload</button>
+                <button 
+                    className={styles.buttonSelection} 
+                    onClick={resetFilters}>
+                        Reset
+                </button>
                  <Order 
                     handleOrder={handleOrder}>    
                 </Order>

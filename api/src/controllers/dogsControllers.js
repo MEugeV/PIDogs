@@ -14,9 +14,11 @@ const getDogs = async function () {
         name: dog.name,
         image: dog.image.url,
         temperaments: dog.temperament || "n/a",
-        //weight: [0], "NaN", "NaN" - [1]
-        min_weight: dog.weight.metric.split(" - ")[0]==="NaN"? !dog.weight.metric.split(" - ")[1]? 24 : parseFloat(dog.weight.metric.split(" - ")[1])-1 : dog.weight.metric.split(" - ")[0],
-        max_weight: dog.weight.metric.split(" - ")[1] || (dog.weight.metric.split(" - ")[0]==="NaN"? 25 : parseFloat(dog.weight.metric.split(" - ")[0])+1),
+        //casos weight: [0], "NaN", "NaN" - [1]
+        weight: 
+        (dog.weight.metric.split(" - ")[0]==="NaN"? !dog.weight.metric.split(" - ")[1]? 24 : parseFloat(dog.weight.metric.split(" - ")[1])-1 : dog.weight.metric.split(" - ")[0]
+        )+"-"+
+        (!dog.weight.metric.split(" - ")[1]? dog.weight.metric.split(" - ")[0]==="NaN"? 25 : parseFloat(dog.weight.metric.split(" - ")[0])+1 : dog.weight.metric.split(" - ")[1])
     }))
     const dogApi= await Promise.all(dogApiPromise)
 
@@ -32,8 +34,7 @@ const getDogs = async function () {
             name: dog.name,
             image: dog.image,
             temperaments: dog.temperaments.map( el=>el.name).join(", "),
-            min_weight: dog.min_weight,
-            max_weight: dog.max_weight,
+            weight: dog.weight,
         }
     })
 
@@ -59,43 +60,45 @@ const getDetail= async function (id) {
             name: dogDB.name,
             image: dogDB.image,
             temperaments: dogDB.temperaments.map(el=>el.name).join(", "),
-            min_weight: dogDB.min_weight,
-            max_weight: dogDB.max_weight,
-            min_height: dogDB.min_height,
-            max_height: dogDB.max_height,
+            weight: dogDB.weight,
+            height: dogDB.height,
             life_span: dogDB.life_span || "n/a"
         }
-        return detailDB //poner en el try el mensaje de error si es nulo, no llega a responder nulo porque antes se traba con el retorno......throw new error...
+        return detailDB 
     } else {
-        const dogApi= (await axios(api)).data.filter(dog=>dog.id==id)[0]
+        const dogApi= (await axios(api)).data.filter(dog=>dog.id==id)[0] //devuelve array con un objeto
 
         const detailApi= {
             id: dogApi.id,
             name: dogApi.name,
             image: dogApi.image.url,
             temperaments: dogApi.temperament || "n/a",
-            min_weight: dogApi.weight.metric.split(" - ")[0]==="NaN"? !dogApi.weight.metric.split(" - ")[1]? 24 : parseFloat(dogApi.weight.metric.split(" - ")[1])-1 : dogApi.weight.metric.split(" - ")[0],
-            max_weight: dogApi.weight.metric.split(" - ")[1] || (dogApi.weight.metric.split(" - ")[0]==="NaN"? 25 : parseFloat(dogApi.weight.metric.split(" - ")[0])+1),
-            min_height: dogApi.height.metric.split(" - ")[0],
-            max_height: dogApi.height.metric.split(" - ")[1] || parseFloat(dogApi.height.metric.split(" - ")[0])+1,
-            life_span:  dogApi.life_span.replace(" years","").replace(" Years","").replace(" - ","-").replace(" – ","-"), //no hay ninguno en filtro, seteo years en la DB
+            weight: 
+            (dogApi.weight.metric.split(" - ")[0]==="NaN"? !dogApi.weight.metric.split(" - ")[1]? 24 : parseFloat(dogApi.weight.metric.split(" - ")[1])-1 : dogApi.weight.metric.split(" - ")[0])
+            +"-"+
+            (dogApi.weight.metric.split(" - ")[1] || (dogApi.weight.metric.split(" - ")[0]==="NaN"? 25 : parseFloat(dogApi.weight.metric.split(" - ")[0])+1))
+            ,
+            height: dogApi.height.metric.replace(" - ","-").replace(" – ","-"),    
+            life_span:  dogApi.life_span.replace(" years","").replace(" Years","").replace(" - ","-").replace(" – ","-"),
         }
         return detailApi
     }
 }
 
-const postDog = async function (name, image, min_height, max_height, min_weight, max_weight, life_span, temperaments) {
+const postDog = async function (name, image, height, weight, life_span, temperaments, addTemperaments) {
 
     const newDog= await Dog.create({
         name, 
         image, 
-        min_height, 
-        max_height, 
-        min_weight, 
-        max_weight, 
+        height,  
+        weight, 
         life_span })
 
     newDog.setTemperaments(temperaments)
+    
+    const addTempToUpperCase=addTemperaments.map(el=>({name : el.name.split(" ").map(el=>el.slice(0,1).toUpperCase()+el.slice(1).toLowerCase()).join(" ")}))
+    const promiseAddTemper=addTempToUpperCase.map(el=>newDog.createTemperament(el))
+    await Promise.all(promiseAddTemper)
 
     return "Dog created successfully"
 }
@@ -106,3 +109,13 @@ module.exports = {
     postDog,
     getDetail
 }
+
+
+
+        // min_weight: dog.weight.metric.split(" - ")[0]==="NaN"? !dog.weight.metric.split(" - ")[1]? 24 : parseFloat(dog.weight.metric.split(" - ")[1])-1 : dog.weight.metric.split(" - ")[0],
+        // max_weight: dog.weight.metric.split(" - ")[1] || (dog.weight.metric.split(" - ")[0]==="NaN"? 25 : parseFloat(dog.weight.metric.split(" - ")[0])+1),
+
+        // min_weight: dogApi.weight.metric.split(" - ")[0]==="NaN"? !dogApi.weight.metric.split(" - ")[1]? 24 : parseFloat(dogApi.weight.metric.split(" - ")[1])-1 : dogApi.weight.metric.split(" - ")[0],
+            // max_weight: dogApi.weight.metric.split(" - ")[1] || (dogApi.weight.metric.split(" - ")[0]==="NaN"? 25 : parseFloat(dogApi.weight.metric.split(" - ")[0])+1),
+            // min_height: dogApi.height.metric.split(" - ")[0],
+            // max_height: dogApi.height.metric.split(" - ")[1] || parseFloat(dogApi.height.metric.split(" - ")[0])+1,

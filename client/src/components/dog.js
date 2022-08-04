@@ -13,7 +13,7 @@ return (
         <div className={styles.infoCont}>
             <p className={styles.name} >{props.dog.name}</p>
             <p className={styles.info}>Temperament: <br/>{props.dog.temperaments}</p>
-            <p className={styles.info} >Weight: {props.dog.min_weight} -{props.dog.max_weight} kgs </p>
+            <p className={styles.info} >Weight: {props.dog.weight} kgs </p>
             <Link className={styles.link} to={`/detail/${props.dog.id}`}>View detail</Link>
         </div>
     </div>

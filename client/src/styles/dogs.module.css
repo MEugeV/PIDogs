@@ -1,11 +1,4 @@
 .container {
-    /* position: relative; */
-    /* position:static; */
-    /* top: 20vw; */
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 15vw; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;   
     gap: 40px;

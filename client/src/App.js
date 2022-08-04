@@ -1,10 +1,10 @@
 import './App.css';
-import Landing from './presentacionales/landingpage';
-import {Route, Switch} from "react-router-dom"
+import Landing from './components/landingpage';
+import {Route, Switch, Redirect} from "react-router-dom"
 import Home from "./containers/home"
-import Detail from './presentacionales/detail';
-import Form from './presentacionales/form';
-import Default from './presentacionales/default';
+import Detail from './components/detail';
+import Form from './components/form';
+import Default from './components/default';
 
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
       <Route exact path="/home" component={Home} />
       <Route exact path="/detail/:id" component={Detail}/>
       <Route exact path="/form" component={Form}/>
-      {/* history push? */}
       <Route path="/" component={Default}/> 
+      {/* <Redirect from="*" to="/" /> */}
     </Switch>
   );
 }
