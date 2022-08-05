@@ -6,7 +6,6 @@ const api=`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`
 
 const createTemperaments = async function() {
 
-    if(!(await Temperament.findAll()).length) {
         
         const apiData= (await axios.get(api)).data
     
@@ -22,8 +21,7 @@ const createTemperaments = async function() {
     
         return temperaments
     
-    } else {
-        return "Los temperamentos ya están cargados"}    
+ 
 }
 
 const getTemperaments= async function () {

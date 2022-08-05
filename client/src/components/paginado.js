@@ -9,7 +9,7 @@ for(let i=1;i<=pages;i++) {
     pagesArray.push(i)
 } 
 
-let first=parseInt(page)!==parseInt(pages)? parseInt(page)!==1? parseInt(page)-2 : 0 : parseInt(page)-3 
+let first=parseInt(page)!==parseInt(pages)? parseInt(page)!==1? parseInt(page)-2 : 0 : ((parseInt(page)-3)<0? 0 : (parseInt(page)-3) )
 let last= parseInt(page)!==parseInt(pages)? parseInt(page)===1? parseInt(page)+2 : parseInt(page)+1 : parseInt(page)  
 
     return (

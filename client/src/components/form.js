@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { connect, useDispatch } from "react-redux"
+import { connect } from "react-redux"
 import {useHistory} from "react-router-dom"
 import { useState } from "react"
 import validate from "../functions/validateForm"
@@ -42,7 +42,6 @@ const[error, setError] = useState({})
 function handleChange (e) {
     setState((state)=>({...state,[e.target.name]:e.target.value}))
     setError(validate ({...state,[e.target.name]:e.target.value}, dogs,temperamentsList)) 
-    console.log(state)
 }
 
 function selecTemp (e) {
@@ -61,7 +60,6 @@ function selecTemp (e) {
 
 function addTemperaments(e) {
     e.preventDefault()
-
     state.addTemperaments.find(el=>el===state.newTemperament)
     ? alert(`You have already created the temperament "${state.newTemperament}"`) 
     :(
@@ -69,10 +67,9 @@ function addTemperaments(e) {
         ?alert(`You can add up to 5 temperaments`)
         :setState((state)=>({...state,addTemperaments: [...state.addTemperaments,state.newTemperament]}))
     )
-    
-    
     setError(validate ({...state,addTemperaments: [...state.addTemperaments,state.newTemperament]}, dogs,temperamentsList)) 
     setState((state)=>({...state, newTemperament:""}))
+    document.querySelector("#submitTemp").disabled=true
 }
 
 function deSelectTemp (e) {

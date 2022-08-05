@@ -1,6 +1,6 @@
 import './App.css';
 import Landing from './components/landingpage';
-import {Route, Switch, Redirect} from "react-router-dom"
+import {Route, Switch} from "react-router-dom"
 import Home from "./containers/home"
 import Detail from './components/detail';
 import Form from './components/form';

@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "../styles/cardsBarTools.module.css"
 
-export default function Filters ({handleFilter, temperaments}) {
+export default function Filters (props) {
 
     return (
         <div className={styles.container}>
@@ -18,9 +18,9 @@ export default function Filters ({handleFilter, temperaments}) {
                         className={styles.buttonSelection} 
                         id="filter" 
                         name="temperament" 
-                        onChange={handleFilter}>
+                        onChange={props.handleFilter}>
                             <option>All</option>
-                            {temperaments?.map(el=>(<option key={el.id}>{el.name}</option>))}
+                            {props.temperaments.map(el=>(<option key={el.id}>{el.name}</option>))}
                     </select>
                 </div>
                 <div className={styles.selection}>
@@ -32,7 +32,7 @@ export default function Filters ({handleFilter, temperaments}) {
                         className={styles.buttonSelection} 
                         id="filter" 
                         name="source" 
-                        onChange={handleFilter}>
+                        onChange={props.handleFilter}>
                             <option >All</option>
                             <option >Existent</option>
                             <option >Created</option>

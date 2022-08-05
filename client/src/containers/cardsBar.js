@@ -6,23 +6,24 @@ import SearchBar from "../components/searchBar"
 import Filters from "../components/filters"
 import styles from "../styles/cardsBar.module.css"
 
-export default function CardsBar () {
+export default function CardsBar (props) {
 
+    
     const initialFilter={
         temperament: "All",
         source: "All"
     }
 
-    const temperaments = useSelector((state) => state.temperaments)     
     const dogs = useSelector((state) => state.dogs)     
-
+    
     const [search,setSearch] =useState("")
     const [searched,setSearched] =useState("") //para mostrar la seleccion sólo luego del submit
     const[filter, setFilter] = useState(initialFilter)
 
     const dispatch = useDispatch()
 
-    let val="c"
+
+
     //search
     function handleChange (e) { 
         setSearched("")
@@ -30,7 +31,6 @@ export default function CardsBar () {
      }
     
     
-   
     function handleSearch (e) {
         e.preventDefault()
         console.log(e.target.value)
@@ -57,7 +57,6 @@ export default function CardsBar () {
         dispatch(orderDogs(e.target.value))
         e.target.id==="alphabetical" && (document.querySelector("#weight").value="Select")
         e.target.id==="weight" && (document.querySelector("#alphabetical").value="Select")
-
     }
 
     //search y reload
@@ -83,7 +82,7 @@ export default function CardsBar () {
              <div className={styles.filterOrder}>
                  <Filters 
                     handleFilter={handleFilter} 
-                    temperaments={temperaments}>    
+                    temperaments={props.temperaments}>    
                 </Filters>
                 <button 
                     className={styles.buttonSelection} 

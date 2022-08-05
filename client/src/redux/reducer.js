@@ -76,17 +76,17 @@ export default function reducer (state=initialState, action) {
             } else if (action.payload.source==="All") {
                 return {
                     ...state,
-                    shownDogs: state.dogs.filter (el=> el.temperaments.includes(action.payload.temperament)),
+                    shownDogs: state.dogs.filter (dog=> !!dog.temperaments.split(", ").find(temp=> temp===action.payload.temperament)),
                     page: 1
                 }
             } else {
                 return {
                     ...state,
-                    shownDogs: state.dogs.filter (el=> 
-                        el.temperaments.includes(action.payload.temperament) 
+                    shownDogs: state.dogs.filter (dog=> 
+                        !!dog.temperaments.split(", ").find(temp=> temp===action.payload.temperament) 
                         && (action.payload.source==="Existent"
-                        ? !isNaN(el.id) 
-                        : isNaN(el.id))),
+                        ? !isNaN(dog.id) 
+                        : isNaN(dog.id))),
                     page: 1
                 }
             }

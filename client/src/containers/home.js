@@ -8,18 +8,22 @@ import styles from "../styles/home.module.css"
 import img from "../styles/pictures/breednf.jpg" 
 import NavBar from "../components/navBar";
 
-function Home ({shownDogs, dogs,getDogs,getTemperaments,page, setPage,resetDogs}) { 
+function Home ({shownDogs, temperaments, dogs,getDogs,getTemperaments,page, setPage,resetDogs}) { 
 
 
 useEffect (()=>{
-    getDogs()
-    getTemperaments()
+    async function upDatePost() {
+        await getDogs()
+        getTemperaments()
+    }
+    upDatePost()
     return ()=>{
         resetDogs()
         setPage(1)
     }
 },[])
-//getDogs,getTemperaments,resetDogs,setPage
+
+
 
 let pagesPerPage=8
 let pages=Math.ceil(shownDogs.length/pagesPerPage)
@@ -42,7 +46,7 @@ function handleNext (e) {
             <NavBar>    
             </NavBar>
             <div className={styles.homeBar}>
-                <CardsBar>
+                <CardsBar temperaments={temperaments}>
                 </CardsBar> 
                 <Paginado 
                     page={page} 
@@ -88,7 +92,8 @@ function mapStateToProps(state) {
     return {
         shownDogs: state.shownDogs,
         dogs: state.dogs,
-        page: state.page
+        page: state.page,
+        temperaments: state.temperaments,
     }
 }
 
