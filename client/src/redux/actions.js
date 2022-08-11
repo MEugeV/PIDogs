@@ -50,7 +50,7 @@ export function setPage (page) {
 export function resetDogs () {
     return {type: RESET_DOGS}
 }
-
+ 
 export function searchName(name) {
     return async function (dispatch){
         try{
