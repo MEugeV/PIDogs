@@ -104,10 +104,15 @@ const postDog = async function (name, image, height, weight, life_span, temperam
 }
 
 
+const dogDelet = async function (id) {
+    await Dog.destroy({where: {id:id}})
+}
+
 module.exports = {
     getDogs,
     postDog,
-    getDetail
+    getDetail,
+    dogDelet
 }
 
 

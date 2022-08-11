@@ -1,4 +1,5 @@
 const {Router}= require ("express")
+// const {Dog}= require ("../db")
 const{getDogs, postDog, getDetail} = require ("../controllers/dogsControllers")
 
 
@@ -15,6 +16,7 @@ routes.get("/", async (req,res,next)=>{
             const dogsFilteredByName= dogs.filter(dog=>dog.name.toLowerCase().includes(name.toLowerCase()))
 
             dogsFilteredByName.length<1? res.status(400).send("Empty search"): res.status(200).send(dogsFilteredByName)
+            
         }
 
     } catch (error) {
@@ -35,6 +37,20 @@ routes.get("/:id", async (req,res,next)=> {
     }
 
 })
+
+// routes.delete("/:id", async(req,res,next)=>{
+//     const{id}= req.params
+//     try {
+//         await Dog.destroy(
+//             {where: {id:id}}
+//         )
+//         // await dogDelet(id)
+//         res.status(200).send("Dog deleted")
+//     } catch (e){
+//         next(e)
+//     }
+
+// })
 
 routes.post("/", async (req,res,next)=>{
 

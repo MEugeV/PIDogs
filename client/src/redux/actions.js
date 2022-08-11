@@ -14,7 +14,7 @@ export const ORDER_DOGS= "ORDER_DOGS"
 
 export function getDogs() {
     return (dispatch) =>{
-            return axios("http://localhost:3001/dogs")
+            return axios("/dogs")
             .then(data=> dispatch({type: GET_DOGS, payload: data.data }))
             .catch(error=>alert(error.message))
     }
@@ -22,7 +22,7 @@ export function getDogs() {
 
 export function getTemperaments() {
     return (dispatch) => {
-            return axios("http://localhost:3001/temperaments")
+            return axios("/temperaments")
             .then(data=>dispatch({type: GET_TEMPERAMENTS, payload: data.data}))
             .catch(error=>alert(error.message))
     }
@@ -31,7 +31,7 @@ export function getTemperaments() {
 export function getDetail (id) {
     return async function (dispatch) {
         try {
-            const data= await axios(`http://localhost:3001/dogs/${id}`)
+            const data= await axios(`/dogs/${id}`)
             dispatch({type: GET_DETAIL, payload: data.data })
         } catch(error) {
             alert("We could´t find this detail" + error.message)
@@ -54,7 +54,7 @@ export function resetDogs () {
 export function searchName(name) {
     return async function (dispatch){
         try{
-            const data= await axios.get(`http://localhost:3001/dogs`,{params:{name}})
+            const data= await axios.get(`/dogs`,{params:{name}})
             dispatch({type:SEARCH_NAME, payload: data.data})
         } catch (error) {
             alert(error.request.response)
@@ -73,7 +73,7 @@ export function orderDogs (order) {
 
 export async function postDog(created) {
     try {
-        const response= await axios.post(`http://localhost:3001/dogs`,created)
+        const response= await axios.post(`/dogs`,created)
         alert(response.request.response)
     } catch (error) {
         alert("Dog not created... "+ error.request.response)

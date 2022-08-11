@@ -22,7 +22,7 @@ useEffect (()=>{
         setPage(1)
     }
 },[])
-
+ 
 
 
 let pagesPerPage=8
