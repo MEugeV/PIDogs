@@ -23,7 +23,7 @@ const {createTemperaments}= require("./src/controllers/temperamentsControllers")
 require('dotenv').config();
  
 // Syncing all the models at once.
-conn.sync({ force: true }).then( () => {
+conn.sync({ force: false }).then( () => {
   createTemperaments();
   server.listen(process.env.PORT, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
