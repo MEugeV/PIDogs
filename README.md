@@ -1,6 +1,6 @@
 # Individual Project - Henry Dogs
 
-<img height="120" src="pictures/dog.png" />
+<img height="120" src="dog.png" />
 
 ## Project Objectives
 
@@ -20,10 +20,10 @@ Application in which different breeds of dog can be seen along with relevant inf
 https://pih-dogs.vercel.app
 
 <div align="center">
-<img width="49%"  src="pictures/landing.PNG" alt="landing" />
-<img width="49%"  src="pictures/home.PNG" alt="landing" />
-<img width="49%"  src="pictures/detail.PNG" alt="landing" />
-<img width="49%" src="pictures/form.PNG" alt="landing" />
+<img width="49%"  src="landing.PNG" alt="landing" />
+<img width="49%"  src="home.PNG" alt="landing" />
+<img width="49%"  src="detail.PNG" alt="landing" />
+<img width="49%" src="form.PNG" alt="landing" />
 </div>
 
 ## Quick start to run code
