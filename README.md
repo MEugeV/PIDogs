@@ -17,7 +17,7 @@ Application in which different breeds of dog can be seen along with relevant inf
 
 ## Visit the web site here
 
-https://pih-dogs.vercel.app/home
+https://pih-dogs.vercel.app
 
 <div align="center">
 <img width="49%"  src="landing.PNG" alt="landing" />
