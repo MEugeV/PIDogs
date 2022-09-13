@@ -21,6 +21,13 @@ Application in which different breeds of dog can be seen along with relevant inf
 
 https://pih-dogs.vercel.app/home
 
+<div align="center">
+<img width="49%"  src="landing.PNG" alt="landing" />
+<img width="49%"  src="home.PNG" alt="landing" />
+<img width="49%"  src="detail.PNG" alt="landing" />
+<img width="49%" src="form.PNG" alt="landing" />
+</div>
+
 ## Quick start to run code
 
 - Clone repository
