@@ -12,7 +12,7 @@
 Application in which different breeds of dog can be seen along with relevant information about them, using the external api [the dog api](https://thedogapi.com/). This allows to:
 
 - Search dogs
-- Filter / Sort them (from the front end)
+- Filter / Sort them (in front-end)
 - Add new dogs that are stored in a database (the creation form is validated with JavaScript)
 
 ## Visit the web site here
