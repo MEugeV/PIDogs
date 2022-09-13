@@ -7,6 +7,7 @@
 ## Project Objectives
 
 - Build an App using React, Redux, Node, Postgres and Sequelize
+- Using external libraries to apply styles to the application was not allowed, so CSS Modules was applied.
 
 ## Functionality
 
@@ -14,9 +15,7 @@ Application in which different breeds of dog can be seen along with relevant inf
 
 - Search dogs
 - Filter / Sort them (from the front end)
-- Add new dogs (form validated with JavaScript) that are stored in a database
-
-Using external libraries to apply styles to the application was not allowed, so CSS Modules was applied.
+- Add new dogs that are stored in a database (the creation form is validated with JavaScript)
 
 ## Visit the web site here
 
@@ -25,8 +24,7 @@ https://pih-dogs.vercel.app/home
 ## Quick start to run code
 
 - Clone repository
-  The boilerplate has two folders: `api` and `client`. In these folders will be the back-end and front-end code respectively.
-- In `api` create a file called: `.env` that has the following form:
+- The boilerplate has two folders: `api` and `client`. In these folders will be the back-end and front-end code respectively. In `api` create a file called: `.env` that has the following form:
 
 ```send
 DB_USER=postgresuser
