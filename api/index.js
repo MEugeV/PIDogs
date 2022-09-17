@@ -24,7 +24,7 @@ const {
 } = require("./src/controllers/temperamentsControllers");
 require("dotenv").config();
 
-// Syncing all the models at once.
+// Syncing all the models at once .
 conn.sync({ force: true }).then(() => {
   createTemperaments();
   server.listen(process.env.PORT, () => {
