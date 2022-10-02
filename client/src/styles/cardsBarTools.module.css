@@ -74,13 +74,13 @@
 }
 
 .searchTitle {
-    font-size: 1vw;
+    font-size: 0.8rem;
     padding-left: 10px;
     padding-right: 3px;
 }
 
 .searchBreed {
-    font-size: 1.1vw;
+    font-size: 0.9rem;
     padding-left: 3px;
     padding-right: 10px;
     font-weight: 500;
@@ -108,3 +108,20 @@
     background-color: #e9dac1;
 }
 */
+
+@media(max-width: 1300px) {
+    .selection {
+        width:112px;
+    }
+    .buttonSelection {
+        height: 17px;
+        font-size: 10px
+    }
+    .searchContainer {
+        padding-top: 4px;
+        height: fit-content;
+    }
+    .lupa {
+        font-size: 1rem;
+    }      
+}

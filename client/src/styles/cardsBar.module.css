@@ -47,3 +47,21 @@
     color:black;
     cursor: pointer;
 }
+
+@media(max-width: 1300px) {
+    .filterOrder {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .buttonSelection {
+        margin-bottom: 0.4vh;
+        font-size: 11px;    
+        height: 17px;
+
+    }
+    .cardBar {
+        font-size: 15px;
+       
+    }
+}

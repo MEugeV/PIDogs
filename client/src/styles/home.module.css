@@ -7,7 +7,7 @@
 .homeBar {
     position: fixed;
     margin-top: 3.5vw;
-    box-shadow: 0vh -3vh 8vh 4.5vw #0f3d3e inset;
+    box-shadow: 0vh -3vh 8vh 4.7vw #0f3d3e inset;
     color: white;
     right: 0;
     left: 0;
@@ -21,7 +21,7 @@
     color: #0F3D3E;
     font-weight: 600;
     letter-spacing: 2px;
-    font-size: 1.5vw;
+    font-size: 1.2rem;
 }
 
 .loadingIn {
@@ -63,4 +63,25 @@
 
 .positionNotFound {
     height: 30vh;
+}
+
+@media (max-width: 1300px) {
+.notFound{
+    top: 3vh;    
+    font-size: 1.2rem;
+}
+.imgNotFound {
+    margin-top: -79px;
+    position: relative;
+    z-index: -1;
+}
+.homeBar {
+    margin-top: 87px;
+    box-shadow: 0vh -3vh 10vh 20vw #0f3d3e inset;
+}
+.loading {
+    top: 300px;
+    text-align: center;
+    margin: auto;
+}
 }

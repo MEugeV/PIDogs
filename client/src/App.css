@@ -36,7 +36,7 @@
 }
 
 .headLinksActive {
-  text-decoration: underline;
+  display: none;
 }
 
 .headLinksActive:hover {
@@ -86,5 +86,20 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1300px) {
+  .head {
+    flex-direction: column;
+    height: 87px;
+    z-index: 1;
+  }
+  .headLinks {
+    font-size: 1rem;
+    padding: 0.2vw;
+  }
+  .headLinks:hover {
+    font-size: 1rem;
   }
 }

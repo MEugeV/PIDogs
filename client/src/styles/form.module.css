@@ -220,3 +220,84 @@
 .addTempInputSend:hover {
     cursor: pointer;
 }
+
+@media (max-width: 800px){ 
+    .tittle {
+        font-size: 1.5rem;
+        margin: 60px 0vh 0vh 0vh;
+    }
+    .formBox {
+        width: 90vw;
+        display:block;
+    }
+    .img {
+        width: 300px;
+    }
+    .imgDiv {
+        height: 90px;
+    }
+    .fieldmaxMin {
+        position: relative;
+        text-align: left;
+        left: 18px;
+        width: 98.5%;    
+    }
+    
+    .tempList {
+        width: 90%;
+        height: 100px;
+    }
+    .form input {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+    .form label {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+    .form span {
+        font-size: 0.9rem;
+        width: 90%;
+    }
+    .field {
+        position: relative;
+        left: 15px    
+    }    
+    .tempList span {
+        width: 90%;
+    }
+    .form select {
+        font-size: 0.9rem;
+        width: 92%;
+    }    
+    .AddTempDisplay {
+        flex-direction: column;
+        align-items: left;
+    }
+    .addTempInput {
+        width: 90% !important;
+    }
+    .addTempInputSend {
+        margin-top: 5px;
+        width: 50% !important;
+    }
+    .submit {
+        width: 50% !important;
+    }
+    .submitError {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+    .form {        
+        font-size: 0.9rem;
+    }
+    .maxMin input{
+        font-size: 0.9rem;
+    }
+    .maxMin label{
+        font-size: 0.9rem;
+    }
+    .maxMin {
+        flex-direction: column; 
+    }
+}

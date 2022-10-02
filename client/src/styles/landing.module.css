@@ -53,3 +53,22 @@
     transition: all 400ms ease-in-out;
 
 }
+
+@media (max-width: 1100px) {
+    body {
+        height: 100vh;
+    }
+    .landing {
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: -25cm;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .start {
+        margin-block: auto;        
+        margin-bottom: 10%;
+        background-color: #E6B325;
+    }        
+}
