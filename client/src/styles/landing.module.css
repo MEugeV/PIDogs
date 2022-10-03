@@ -59,6 +59,7 @@
         height: 100vh;
     }
     .landing {
+        background-image: url("./pictures/yellowdogthin.jpg");
         height: 100vh;
         background-repeat: no-repeat;
         background-position: center;
