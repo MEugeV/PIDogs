@@ -225,15 +225,15 @@
 
 @media (max-width: 800px){ 
     .tittle {
-        font-size: 2rem;
-        margin: 20px 0vh 0vh 0vh;
+        font-size: 2.5rem;
+        margin: 35px 0vh 0vh 0vh;
     }
     .formBox {
         width: 90vw;
         display:block;
     }
     .img {
-        width: 300px;
+        width: 320px;
     }
     .imgDiv {
         height: 90px;

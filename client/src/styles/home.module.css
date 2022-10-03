@@ -76,8 +76,8 @@
     z-index: -1;
 }
 .homeBar {
-    margin-top: 56px;
-    box-shadow: 0vh -3vh 10vh 20vw #0f3d3e inset;
+    margin-top: 65px;
+    box-shadow: 0vh -3vh 10vh 25vw #0f3d3e inset;
 }
 .positionDogs {
     height: 21rem;
