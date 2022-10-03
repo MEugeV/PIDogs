@@ -76,11 +76,11 @@
     z-index: -1;
 }
 .homeBar {
-    margin-top: 58px;
+    margin-top: 56px;
     box-shadow: 0vh -3vh 10vh 20vw #0f3d3e inset;
 }
 .positionDogs {
-    height: 19rem;
+    height: 21rem;
 }
 .loading {
     top: 300px;

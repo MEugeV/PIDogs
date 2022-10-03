@@ -28,13 +28,10 @@ export function getTemperaments() {
 }
 
 export function getDetail(id) {
-  return async function (dispatch) {
-    try {
-      const data = await axios(`/dogs/${id}`);
-      dispatch({ type: GET_DETAIL, payload: data.data });
-    } catch (error) {
-      alert("We could´t find this detail" + error.message);
-    }
+  return (dispatch) => {
+    return axios(`/dogs/${id}`).then((data) =>
+      dispatch({ type: GET_DETAIL, payload: data.data })
+    );
   };
 }
 
