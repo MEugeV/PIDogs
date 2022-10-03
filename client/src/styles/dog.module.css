@@ -68,3 +68,18 @@
     font-size: 6vh;
     text-shadow:2px 2px 4px #b3191c;
 }
+
+@media (max-width: 1300px){ 
+    .name {
+        font-size: 1.3rem;
+    }
+        .info {
+        font-size: 1rem;
+    }
+    .infoCont {
+        min-height: auto;
+    }   
+    .dog {
+        margin-bottom: 0.2rem;
+    }
+}

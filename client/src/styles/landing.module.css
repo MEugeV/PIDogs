@@ -68,7 +68,12 @@
     }
     .start {
         margin-block: auto;        
-        margin-bottom: 10%;
+        margin-bottom: 18%;
         background-color: #E6B325;
+        font-size: 2rem;
+        padding: 0.7rem 1.5rem 0.2rem 2rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto
     }        
 }

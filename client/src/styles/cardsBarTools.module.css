@@ -110,18 +110,26 @@
 */
 
 @media(max-width: 1300px) {
+    .container {
+        flex-direction: row;
+    }
     .selection {
         width:112px;
     }
     .buttonSelection {
-        height: 17px;
-        font-size: 10px
+        height: 1.7rem;
+        font-size: 1rem;    
     }
     .searchContainer {
         padding-top: 4px;
         height: fit-content;
     }
     .lupa {
-        font-size: 1rem;
+        font-size: 1.6rem;
     }      
+    .search {
+        font-size: 1.1rem;
+        padding: 2px 2px 2px 2px;
+
+    }
 }
